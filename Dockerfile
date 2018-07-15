@@ -1,8 +1,8 @@
-FROM alpine:latest
+FROM alpine:3.7
 
-LABEL maintainer="https://github.com/weixu365/docker-tengine"
+LABEL maintainer="https://github.com/wanghy8166/docker-tengine"
 
-ENV TENGINE_VERSION 2.2.1
+ENV TENGINE_VERSION 2.2.2
 
 RUN CONFIG="\
     --prefix=/etc/nginx \
@@ -47,6 +47,7 @@ RUN CONFIG="\
 	" \
 	&& addgroup -S nginx \
 	&& adduser -D -S -h /var/cache/nginx -s /sbin/nologin -G nginx nginx \
+	&& sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
 	&& apk add --no-cache --virtual .build-deps \
 		gcc \
 		libc-dev \
