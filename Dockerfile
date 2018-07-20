@@ -104,6 +104,7 @@ RUN CONFIG="\
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
+COPY localtime /etc/localtime
 
 EXPOSE 80
 
