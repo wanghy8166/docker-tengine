@@ -7,3 +7,6 @@ stages:
       tag: example/app:v1
       registry: 127.0.0.1:34455
 timeout: 60
+branch:
+  include:
+  - 2.2.1
